@@ -22,7 +22,6 @@ import {
   CalendarCheck,
   MessageCircle,
   ChevronRight,
-  CheckCircle2,
 } from "lucide-react";
 import heroImg from "@/assets/hero-ear.jpg";
 import hostImg from "@/assets/host.jpg";
@@ -72,7 +71,6 @@ export default function LandingPage() {
       <FinalCTA />
       <Footer />
       <StickyCTA />
-      <FloatingWhatsApp />
     </div>
   );
 }
