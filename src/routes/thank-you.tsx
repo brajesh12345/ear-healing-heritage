@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
-import { CheckCircle2, MessageCircle, CalendarCheck, Clock, Gift, ChevronRight } from "lucide-react";
+import { CheckCircle2, MessageCircle, Clock, Gift, ChevronRight } from "lucide-react";
 
 const WHATSAPP_URL = "https://chat.whatsapp.com/FFyouJSnHGQEWWNZWSeojC";
 
