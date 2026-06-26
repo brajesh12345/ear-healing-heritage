@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { CheckCircle2, MessageCircle, CalendarCheck, Clock, Gift, ChevronRight } from "lucide-react";
 
-const WHATSAPP_URL = "#";
+const WHATSAPP_URL = "https://chat.whatsapp.com/FFyouJSnHGQEWWNZWSeojC";
 
 export const Route = createFileRoute("/thank-you")({
   head: () => ({
@@ -61,12 +61,11 @@ function ThankYou() {
 
         <div className="mt-12 space-y-4">
           <Step n={1} icon={MessageCircle} title="WhatsApp Group Join करें" desc="महत्वपूर्ण updates और reminders के लिए।">
-            <a href={WHATSAPP_URL} className="btn-emerald font-hindi inline-flex items-center gap-2 rounded-full px-7 py-4 text-base font-bold">
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn-emerald font-hindi inline-flex items-center gap-2 rounded-full px-7 py-4 text-base font-bold">
               <MessageCircle className="h-5 w-5" /> WhatsApp Group Join करें
             </a>
           </Step>
-          <Step n={2} icon={CalendarCheck} title="Calendar में Webinar Save करें" desc="ताकि आप समय पर जुड़ सकें।" />
-          <Step n={3} icon={Clock} title="10 मिनट पहले जुड़ें" desc="Webinar शुरू होने से पहले अपना device check कर लें।" />
+          <Step n={2} icon={Clock} title="10 मिनट पहले जुड़ें" desc="Webinar शुरू होने से पहले अपना device check कर लें।" />
         </div>
 
         <motion.div
@@ -98,6 +97,8 @@ function ThankYou() {
 
       <a
         href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         aria-label="WhatsApp"
         className="fixed bottom-6 right-5 z-40 grid h-14 w-14 place-items-center rounded-full bg-[var(--gradient-heal)] text-white shadow-[0_15px_40px_-10px_oklch(0.58_0.13_160/0.6)] transition hover:-translate-y-1"
       >
