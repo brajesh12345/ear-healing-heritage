@@ -20,7 +20,6 @@ import {
   Plus,
   Minus,
   CalendarCheck,
-  MessageCircle,
   ChevronRight,
 } from "lucide-react";
 import heroImg from "@/assets/hero-ear.jpg";
@@ -32,8 +31,6 @@ const WEBINAR_DATE = (() => {
   d.setHours(19, 0, 0, 0);
   return d;
 })();
-
-const WHATSAPP_URL = "#";
 
 function useCountdown(target: Date) {
   const [now, setNow] = useState(() => Date.now());
@@ -128,13 +125,10 @@ function Hero() {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#register" className="btn-gold font-hindi inline-flex items-center gap-2 rounded-full px-7 py-4 text-base font-semibold">
-              अभी FREE Registration करें <ChevronRight className="h-4 w-4" />
-            </a>
-            <a href={WHATSAPP_URL} className="btn-emerald font-hindi inline-flex items-center gap-2 rounded-full px-7 py-4 text-base font-semibold">
-              <MessageCircle className="h-4 w-4" /> WhatsApp पर जुड़ें
-            </a>
+          <div className="mt-8">
+            <Link to="/thank-you" className="btn-gold font-hindi inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold">
+              अभी FREE Register करें <ChevronRight className="h-4 w-4" />
+            </Link>
           </div>
 
           <div className="mt-10 grid max-w-md grid-cols-4 gap-3">
@@ -197,72 +191,7 @@ function Hero() {
         </motion.div>
       </div>
 
-      <RegistrationForm />
     </section>
-  );
-}
-
-function RegistrationForm() {
-  const [submitted, setSubmitted] = useState(false);
-  return (
-    <div id="register" className="mx-auto max-w-5xl px-5 pb-16 sm:px-8">
-      <motion.div {...fadeUp} className="glass-card relative overflow-hidden rounded-3xl p-8 sm:p-10">
-        <div aria-hidden className="shimmer-gold absolute inset-x-0 top-0 h-px" />
-        <div className="grid items-center gap-8 lg:grid-cols-[1fr_1.1fr]">
-          <div>
-            <Pill>Registration Open</Pill>
-            <h2 className="font-hindi mt-4 text-3xl font-bold text-secondary sm:text-4xl">
-              अपनी सीट <span className="text-gradient-gold">सुरक्षित</span> करें
-            </h2>
-            <p className="font-hindi mt-3 text-muted-foreground">
-              सीटें सीमित हैं। नीचे फॉर्म भरकर FREE Live Webinar में अपनी जगह
-              पक्की करें।
-            </p>
-            <ul className="font-hindi mt-5 space-y-2 text-sm text-secondary/80">
-              {["100% FREE Registration", "Hindi में Live Session", "Practical Demonstration", "Q&A Session"].map((t) => (
-                <li key={t} className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-emerald" /> {t}</li>
-              ))}
-            </ul>
-          </div>
-
-          {submitted ? (
-            <div className="rounded-2xl border border-emerald/40 bg-emerald/10 p-8 text-center">
-              <CheckCircle2 className="mx-auto h-12 w-12 text-emerald" />
-              <p className="font-hindi mt-3 text-xl font-semibold text-secondary">धन्यवाद! Registration सफल।</p>
-              <Link to="/thank-you" className="btn-gold font-hindi mt-5 inline-flex rounded-full px-6 py-3 text-sm font-semibold">अगला कदम देखें</Link>
-            </div>
-          ) : (
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-                setTimeout(() => (window.location.href = "/thank-you"), 400);
-              }}
-              className="space-y-3"
-            >
-              {[
-                { name: "name", placeholder: "आपका नाम", type: "text" },
-                { name: "mobile", placeholder: "Mobile Number", type: "tel" },
-                { name: "city", placeholder: "आपका शहर", type: "text" },
-              ].map((f) => (
-                <input
-                  key={f.name}
-                  required
-                  type={f.type}
-                  name={f.name}
-                  placeholder={f.placeholder}
-                  className="font-hindi w-full rounded-2xl border border-input bg-white/80 px-5 py-4 text-base text-secondary placeholder:text-muted-foreground/80 focus:border-gold focus:outline-none focus:ring-2 focus:ring-[color-mix(in_oklab,var(--gold)_40%,transparent)]"
-                />
-              ))}
-              <button type="submit" className="btn-gold font-hindi mt-2 inline-flex w-full items-center justify-center gap-2 rounded-2xl px-6 py-4 text-base font-bold">
-                अपनी सीट सुरक्षित करें <ChevronRight className="h-5 w-5" />
-              </button>
-              <p className="text-center text-xs text-muted-foreground">हम आपका डेटा सुरक्षित रखते हैं।</p>
-            </form>
-          )}
-        </div>
-      </motion.div>
-    </div>
   );
 }
 
