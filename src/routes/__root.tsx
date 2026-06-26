@@ -81,10 +81,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "अक्षता मोहिते के साथ FREE Live Webinar में सीखें भारत की प्राचीन कर्णबिंदु (Auricular) चिकित्सा — बिना दवा, सिर्फ कान के बिंदुओं से ऊर्जा संतुलन।" },
       { name: "author", content: "अक्षता मोहिते" },
       { property: "og:title", content: "भारतीय कर्णबिंदु चिकित्सा — FREE Live Webinar" },
-      { property: "og:description", content: "FREE Live Webinar with अक्षता मोहिते — Learn India's ancient ear-point therapy." },
+      { property: "og:description", content: "अक्षता मोहिते के साथ FREE Live Webinar में सीखें भारत की प्राचीन कर्णबिंदु (Auricular) चिकित्सा — बिना दवा, सिर्फ कान के बिंदुओं से ऊर्जा संतुलन।" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "भारतीय कर्णबिंदु चिकित्सा — FREE Live Webinar" },
+      { name: "twitter:description", content: "अक्षता मोहिते के साथ FREE Live Webinar में सीखें भारत की प्राचीन कर्णबिंदु (Auricular) चिकित्सा — बिना दवा, सिर्फ कान के बिंदुओं से ऊर्जा संतुलन।" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/166b266c-9ed9-48e2-9825-a8b3b89a9a18/id-preview-b9f5bdba--9e4dfa02-0aef-46b1-a9a0-6c750cc8a99a.lovable.app-1782480638249.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/166b266c-9ed9-48e2-9825-a8b3b89a9a18/id-preview-b9f5bdba--9e4dfa02-0aef-46b1-a9a0-6c750cc8a99a.lovable.app-1782480638249.png" },
     ],
     links: [
       {
