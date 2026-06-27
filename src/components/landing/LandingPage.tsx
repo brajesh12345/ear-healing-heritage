@@ -129,8 +129,8 @@ function Pill({ children }: { children: React.ReactNode }) {
 function Hero() {
   const c = useCountdown(WEBINAR_DATE);
   return (
-    <section className="relative">
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pt-14 pb-10 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:pt-24 lg:pb-20">
+    <section className="relative pt-20 sm:pt-24 lg:pt-32">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-10 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:pb-20">
         <motion.div {...fadeUp} className="relative z-10">
           <Pill>FREE Live Webinar · सीमित सीटें</Pill>
           <h1 className="font-hindi mt-6 text-4xl font-bold leading-[1.5] text-secondary sm:text-5xl lg:text-[3.4rem]">
