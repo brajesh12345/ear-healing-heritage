@@ -21,6 +21,7 @@ import {
   Minus,
   CalendarCheck,
   ChevronRight,
+  Github,
 } from "lucide-react";
 import heroAsset from "@/assets/auricular.jpg.asset.json";
 import hostAsset from "@/assets/akshata.jpg.asset.json";
@@ -486,7 +487,17 @@ function Footer() {
           <a href="#" className="hover:text-gold">Terms</a>
           <a href="#" className="hover:text-gold">Contact</a>
         </nav>
-        <p className="text-sm text-muted-foreground md:text-right">Made with care in India.</p>
+        <div className="flex items-center justify-center gap-4 md:justify-end">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-gold shadow-[var(--shadow-soft)] transition hover:scale-110 hover:bg-gold hover:text-secondary"
+          >
+            <Github className="h-5 w-5" />
+          </a>
+        </div>
       </div>
     </footer>
   );
