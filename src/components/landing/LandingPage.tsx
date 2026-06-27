@@ -22,13 +22,15 @@ import {
   CalendarCheck,
   ChevronRight,
 } from "lucide-react";
-import heroImg from "@/assets/hero-ear.jpg";
-import hostImg from "@/assets/host.jpg";
+import heroAsset from "@/assets/auricular.jpg.asset.json";
+import hostAsset from "@/assets/akshata.jpg.asset.json";
+
+const heroImg = heroAsset.url;
+const hostImg = hostAsset.url;
 
 const WEBINAR_DATE = (() => {
   const d = new Date();
-  d.setDate(d.getDate() + 7);
-  d.setHours(19, 0, 0, 0);
+  d.setMinutes(d.getMinutes() + 10);
   return d;
 })();
 
@@ -131,10 +133,8 @@ function Hero() {
             </Link>
           </div>
 
-          <div className="mt-10 grid max-w-md grid-cols-4 gap-3">
+          <div className="mt-10 grid max-w-xs grid-cols-2 gap-3">
             {[
-              { v: c.d, l: "Days" },
-              { v: c.h, l: "Hrs" },
               { v: c.m, l: "Min" },
               { v: c.s, l: "Sec" },
             ].map((t) => (
