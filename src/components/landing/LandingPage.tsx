@@ -440,18 +440,17 @@ function Testimonials() {
 
 function FAQ() {
   const items = [
-    { q: "क्या यह Webinar Free है?", a: "हाँ, यह Webinar पूर्णतः FREE है। सिर्फ Registration आवश्यक है।" },
-    { q: "इस Webinar में कौन जुड़ सकता है?", a: "Doctors, therapists, students, यहाँ तक कि housewives — हर कोई जो natural healing सीखना चाहे।" },
-    { q: "क्या Recording उपलब्ध होगी?", a: "हाँ, Registered प्रतिभागियों को सीमित समय के लिए Recording भेजी जाएगी।" },
-    { q: "क्या Medical Background ज़रूरी है?", a: "नहीं। यह Webinar शुरुआती लोगों के लिए भी सरल भाषा में होगा।" },
-    { q: "क्या Certificate मिलेगा?", a: "हाँ, Webinar पूरा करने पर Digital Certificate उपलब्ध होगा।" },
-    { q: "क्या मैं सीखकर अभ्यास कर सकती/सकता हूँ?", a: "बिल्कुल। Practical Demonstration के साथ आप तुरंत अभ्यास शुरू कर सकते हैं।" },
+    { q: "Is this webinar free?", a: "Yes, this webinar is completely free. Only registration is required." },
+    { q: "Who can join this webinar?", a: "Doctors, therapists, students, health coaches, yoga trainers, housewives, and anyone interested in natural healing." },
+    { q: "Will recording be available?", a: "Yes, registered participants will receive the recording for a limited time." },
+    { q: "Is medical background necessary?", a: "No, this webinar is designed in simple language for beginners as well." },
+    { q: "Can I practice what I learn?", a: "Absolutely. You can start practicing immediately after the practical demonstration." },
   ];
   const [open, setOpen] = useState<number | null>(0);
   return (
     <section className="section-pad">
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
-        <SectionHeading eyebrow="FAQ" title={<>आपके <span className="text-gradient-gold">सवाल</span></>} />
+        <SectionHeading eyebrow="FAQ" title={<>Your <span className="text-gradient-gold">Questions</span></>} />
         <div className="mt-12 space-y-3">
           {items.map((it, i) => {
             const isOpen = open === i;
@@ -459,14 +458,14 @@ function FAQ() {
               <motion.div key={it.q} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.04 }}
                 className="glass-card overflow-hidden rounded-2xl">
                 <button onClick={() => setOpen(isOpen ? null : i)} className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left">
-                  <span className="font-hindi text-base font-semibold text-secondary sm:text-lg">{it.q}</span>
+                  <span className="text-base font-semibold text-secondary sm:text-lg">{it.q}</span>
                   <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-[var(--gradient-gold)] text-secondary">
                     {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
                   </span>
                 </button>
                 <div className={`grid transition-all duration-300 ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
                   <div className="overflow-hidden">
-                    <p className="font-hindi px-6 pb-6 text-sm leading-relaxed text-muted-foreground">{it.a}</p>
+                    <p className="px-6 pb-6 text-sm leading-relaxed text-muted-foreground">{it.a}</p>
                   </div>
                 </div>
               </motion.div>
