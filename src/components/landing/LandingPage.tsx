@@ -22,13 +22,15 @@ import {
   CalendarCheck,
   ChevronRight,
 } from "lucide-react";
-import heroImg from "@/assets/hero-ear.jpg";
-import hostImg from "@/assets/host.jpg";
+import heroAsset from "@/assets/auricular.jpg.asset.json";
+import hostAsset from "@/assets/akshata.jpg.asset.json";
+
+const heroImg = heroAsset.url;
+const hostImg = hostAsset.url;
 
 const WEBINAR_DATE = (() => {
   const d = new Date();
-  d.setDate(d.getDate() + 7);
-  d.setHours(19, 0, 0, 0);
+  d.setMinutes(d.getMinutes() + 10);
   return d;
 })();
 
@@ -100,7 +102,7 @@ function Hero() {
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pt-14 pb-10 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:pt-24 lg:pb-20">
         <motion.div {...fadeUp} className="relative z-10">
           <Pill>FREE Live Webinar · सीमित सीटें</Pill>
-          <h1 className="font-hindi mt-6 text-4xl font-bold leading-[1.1] text-secondary sm:text-5xl lg:text-[3.6rem]">
+          <h1 className="font-hindi mt-6 text-4xl font-bold leading-[1.5] text-secondary sm:text-5xl lg:text-[3.4rem]">
             भारत की प्राचीन{" "}
             <span className="text-gradient-gold">कर्णबिंदु चिकित्सा</span>{" "}
             सीखें
@@ -131,10 +133,8 @@ function Hero() {
             </Link>
           </div>
 
-          <div className="mt-10 grid max-w-md grid-cols-4 gap-3">
+          <div className="mt-10 grid max-w-xs grid-cols-2 gap-3">
             {[
-              { v: c.d, l: "Days" },
-              { v: c.h, l: "Hrs" },
               { v: c.m, l: "Min" },
               { v: c.s, l: "Sec" },
             ].map((t) => (
@@ -199,7 +199,7 @@ function SectionHeading({ eyebrow, title, sub }: { eyebrow: string; title: React
   return (
     <motion.div {...fadeUp} className="mx-auto max-w-3xl text-center">
       <Pill>{eyebrow}</Pill>
-      <h2 className="font-hindi mt-5 text-3xl font-bold leading-tight text-secondary sm:text-4xl lg:text-5xl">{title}</h2>
+      <h2 className="font-hindi mt-5 text-3xl font-bold leading-[1.5] text-secondary sm:text-4xl lg:text-5xl">{title}</h2>
       {sub && <p className="font-hindi mt-4 text-muted-foreground">{sub}</p>}
     </motion.div>
   );

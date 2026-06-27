@@ -183,6 +183,8 @@
   .font-hindi {
     font-family: var(--font-hindi);
     letter-spacing: 0;
+    line-height: 1.45;
+    padding-top: 0.08em;
   }
 }
 
