@@ -60,6 +60,7 @@ export default function LandingPage() {
   return (
     <div className="relative overflow-x-hidden text-foreground">
       <Ornaments />
+      <Header />
       <Hero />
       <WhyAttend />
       <WhatYouLearn />
@@ -72,6 +73,35 @@ export default function LandingPage() {
       <Footer />
       <StickyCTA />
     </div>
+  );
+}
+
+function Header() {
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[color-mix(in_oklab,var(--gold)_30%,transparent)] bg-white/70 backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8 sm:py-4">
+        <Link to="/" className="font-display text-lg font-bold text-secondary sm:text-xl">
+          कर्णबिंदु <span className="text-gradient-gold">चिकित्सा</span>
+        </Link>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="grid h-10 w-10 place-items-center rounded-full bg-secondary text-gold shadow-[var(--shadow-soft)] transition hover:scale-110 hover:bg-gold hover:text-secondary"
+          >
+            <Github className="h-5 w-5" />
+          </a>
+          <Link
+            to="/thank-you"
+            className="font-hindi hidden items-center gap-1 rounded-full bg-[var(--gradient-gold)] px-4 py-2 text-sm font-semibold text-secondary shadow-[var(--shadow-gold)] transition hover:brightness-105 sm:inline-flex"
+          >
+            Register करें
+          </Link>
+        </div>
+      </div>
+    </header>
   );
 }
 
