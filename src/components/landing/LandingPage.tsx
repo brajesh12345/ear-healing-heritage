@@ -36,8 +36,9 @@ const WEBINAR_DATE = (() => {
 })();
 
 function useCountdown(target: Date) {
-  const [now, setNow] = useState(() => Date.now());
+  const [now, setNow] = useState(() => target.getTime());
   useEffect(() => {
+    setNow(Date.now());
     const id = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(id);
   }, []);
